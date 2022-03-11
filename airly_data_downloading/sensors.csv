@@ -1,11 +1,11 @@
-﻿sensor_name;sensor_id;outer
-Skawina;36808;True
-Liszki;33051;True
-Zabierzów;33052;True
-Wielka Wieś;7055;True
-Michałowice;11958;True
-Prusy;11337;True
-Grabie;2599;True
-Wieliczka;18506;True
-Rzeszotary;327;True
-Studencka;86934;False
+﻿sensor_name;sensor_id;inner
+Skawina;36808;False
+Liszki;33051;False
+Zabierzów;33052;False
+Wielka Wieś;7055;False
+Michałowice;11958;False
+Prusy;11337;False
+Grabie;2599;False
+Wieliczka;18506;False
+Rzeszotary;327;False
+Studencka;86934;True

@@ -28,7 +28,7 @@ def get_data_to_save(sensors, measurements_url, headers):
     # pollutants_forecast_data_frames = []
     weather_history_data_frames = []
 
-    for sensor_name, sensor_id, outer in sensors.values:
+    for sensor_name, sensor_id, inner in sensors.values:
         url = measurements_url + str(sensor_id)
         print("Requesting data for {}".format(sensor_name))
         response = requests.get(url, headers=headers).json()
@@ -41,6 +41,7 @@ def get_data_to_save(sensors, measurements_url, headers):
 
         pollutants_history_data_frame = pd.DataFrame(data={'SENSOR_ID': np.full(len(history), sensor_id),
                                                            'DATE': extract_values(history, 'fromDateTime'),
+                                                           'INNER': inner,
                                                            **pollutants_history_data})
         pollutants_history_data_frames.append(pollutants_history_data_frame)
 
@@ -58,6 +59,7 @@ def get_data_to_save(sensors, measurements_url, headers):
 
         weather_history_data_frame = pd.DataFrame(data={'SENSOR_ID': np.full(len(history), sensor_id),
                                                         'DATE': extract_values(history, 'fromDateTime'),
+                                                        'INNER': inner,
                                                         **weather_history_data})
 
         weather_history_data_frames.append(weather_history_data_frame)
